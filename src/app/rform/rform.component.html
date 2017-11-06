@@ -1,0 +1,16 @@
+<p>
+  rform works!
+</p>
+
+<form novalidate [formGroup]="frm" (ngSubmit)="onSubmit()">
+  <div>
+    <input type="text" formControlName="name">
+  </div>
+  <app-switch formControlName="agreeToS"></app-switch>
+  <button (click)="onClick()" type="button">Click</button>
+  <button type="submit">Submit</button>
+  <br>
+  <code>
+    {{frm.get('agreeToS').errors | json}}
+  </code>
+</form>
